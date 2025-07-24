@@ -118,7 +118,7 @@ jobs:
       - name: Check S3 bucket location
         run: |
           echo "Checking bucket location..."
-          aws s3api get-bucket-location --bucket sctp-ce10-tfstate
+          aws s3api get-bucket-location --bucket sctp-ce10-tfstate --region ap-southeast-1
 
       - name: Terraform init
         run: terraform init

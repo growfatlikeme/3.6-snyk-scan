@@ -44,9 +44,7 @@ jobs:
       - name: Check S3 bucket location
         run: |
           echo "Checking bucket location..."
-          aws s3api get-bucket-location --bucket sctp-ce10-tfstate
-          echo "Listing buckets in us-east-1..."
-          aws s3 ls --region us-east-1
+          aws s3api get-bucket-location --bucket sctp-ce10-tfstate --region ap-southeast-1
 
       - name: Terraform Init
         run: terraform init
