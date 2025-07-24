@@ -36,6 +36,9 @@ jobs:
       - name: Terraform fmt
         run: terraform fmt -check
 
+      - name: Clean Terraform cache
+        run: rm -rf .terraform .terraform.lock.hcl
+
       - name: Terraform Init
         run: terraform init
 
