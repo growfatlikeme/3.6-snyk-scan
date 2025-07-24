@@ -110,6 +110,16 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
+      - name: Clean Terraform cache
+        run: |
+          rm -rf .terraform .terraform.lock.hcl
+          rm -f terraform.tfstate terraform.tfstate.backup
+
+      - name: Check S3 bucket location
+        run: |
+          echo "Checking bucket location..."
+          aws s3api get-bucket-location --bucket sctp-ce10-tfstate --region ap-southeast-1
+
       - name: Terraform init
         run: terraform init
 
@@ -146,6 +156,11 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
+
+      - name: Clean Terraform cache
+        run: |
+          rm -rf .terraform .terraform.lock.hcl
+          rm -f terraform.tfstate terraform.tfstate.backup
 
       - name: Terraform init
         run: terraform init
