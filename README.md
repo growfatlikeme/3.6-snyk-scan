@@ -82,4 +82,4 @@ Also note that since npm audit fix runs a full-fledged npm install under the hoo
 
 ## BIG SUCCESS :D
 
-<img width="1440" alt="Screenshot 2023-11-25 at 12 24 34 AM" src="https://github.com/luqmannnn/serverless-package-scan/assets/9068525/fc3b8321-d1ab-4b5f-8378-d26c87d27c5c">
+PLEASE NOTE THAT THIS IS A PROJECT FORKED FROM https://github.com/luqmannnn/serverless-package-scan
