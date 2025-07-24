@@ -37,7 +37,9 @@ jobs:
         run: terraform fmt -check
 
       - name: Clean Terraform cache
-        run: rm -rf .terraform .terraform.lock.hcl
+        run: |
+          rm -rf .terraform .terraform.lock.hcl
+          rm -f terraform.tfstate terraform.tfstate.backup
 
       - name: Terraform Init
         run: terraform init
